@@ -116,14 +116,18 @@
             { cat: "TERMUX BASIC COMMANDS", cmd: "date", use: "Show current date and time" },
 
             // PACKAGE MANAGEMENT
+            { cat: "PACKAGE MANAGEMENT", cmd: "apt update && apt upgrade -y", use: "Refresh and upgrade all tools in one click" },
             { cat: "PACKAGE MANAGEMENT", cmd: "pkg update", use: "Refresh the list of tools" },
             { cat: "PACKAGE MANAGEMENT", cmd: "pkg upgrade", use: "Upgrade installed tools" },
+            { cat: "PACKAGE MANAGEMENT", cmd: "pkg install git -y", use: "Install Git to download tools from GitHub" },
+            { cat: "PACKAGE MANAGEMENT", cmd: "pkg install tor -y", use: "Install Tor for anonymous networking" },
+            { cat: "PACKAGE MANAGEMENT", cmd: "pkg install openssh -y", use: "Install SSH for secure remote login" },
+            { cat: "PACKAGE MANAGEMENT", cmd: "pkg install zip -y", use: "Install tool to compress files into zip" },
+            { cat: "PACKAGE MANAGEMENT", cmd: "pkg install unzip -y", use: "Install tool to extract zip files" },
             { cat: "PACKAGE MANAGEMENT", cmd: "pkg install [tool]", use: "Install a new tool" },
             { cat: "PACKAGE MANAGEMENT", cmd: "pkg uninstall [tool]", use: "Remove a tool" },
             { cat: "PACKAGE MANAGEMENT", cmd: "pkg list-all", use: "See all available tools" },
             { cat: "PACKAGE MANAGEMENT", cmd: "apt update", use: "Same as pkg update" },
-            { cat: "PACKAGE MANAGEMENT", cmd: "apt upgrade", use: "Same as pkg upgrade" },
-            { cat: "PACKAGE MANAGEMENT", cmd: "apt install [tool]", use: "Same as pkg install" },
 
             // FILE MANAGEMENT
             { cat: "FILE MANAGEMENT", cmd: "mv file1 file2", use: "Rename or move a file" },
@@ -164,26 +168,22 @@
             { cat: "NETWORKING COMMANDS", cmd: "nmap ip/website", use: "Scan network ports" },
 
             // PROGRAMMING INSTALL
-            { cat: "PROGRAMMING INSTALLATION", cmd: "pkg install python", use: "To install Python" },
-            { cat: "PROGRAMMING INSTALLATION", cmd: "pkg install nodejs", use: "To install Node.js" },
-            { cat: "PROGRAMMING INSTALLATION", cmd: "pkg install php", use: "To install PHP" },
-            { cat: "PROGRAMMING INSTALLATION", cmd: "pkg install ruby", use: "To install Ruby" },
-            { cat: "PROGRAMMING INSTALLATION", cmd: "pkg install perl", use: "To install Perl" },
-            { cat: "PROGRAMMING INSTALLATION", cmd: "pkg install golang", use: "To install Go" },
-            { cat: "PROGRAMMING INSTALLATION", cmd: "pkg install clang", use: "To install C/C++" },
-            { cat: "PROGRAMMING INSTALLATION", cmd: "pkg install openjdk", use: "To install Java" },
-            { cat: "PROGRAMMING INSTALLATION", cmd: "pkg install lua", use: "To install Lua" },
-            { cat: "PROGRAMMING INSTALLATION", cmd: "pkg install rust", use: "To install Rust" },
+            { cat: "PROGRAMMING INSTALLATION", cmd: "pkg install python python2 python3 -y", use: "Install all versions of Python" },
+            { cat: "PROGRAMMING INSTALLATION", cmd: "pip install --upgrade pip", use: "Upgrade Python package manager to latest" },
+            { cat: "PROGRAMMING INSTALLATION", cmd: "pkg install nano -y", use: "Install text editor to write scripts" },
+            { cat: "PROGRAMMING INSTALLATION", cmd: "pkg install nodejs -y", use: "To install Node.js" },
+            { cat: "PROGRAMMING INSTALLATION", cmd: "pkg install php -y", use: "To install PHP" },
+            { cat: "PROGRAMMING INSTALLATION", cmd: "pkg install ruby -y", use: "To install Ruby" },
+            { cat: "PROGRAMMING INSTALLATION", cmd: "pkg install clang -y", use: "Install C/C++ compiler" },
+            { cat: "PROGRAMMING INSTALLATION", cmd: "pkg install golang -y", use: "To install Go" },
+            { cat: "PROGRAMMING INSTALLATION", cmd: "pkg install openjdk -y", use: "To install Java" },
 
             // PROGRAMMING RUN
             { cat: "PROGRAMMING RUN", cmd: "python filename.py", use: "Run a Python file" },
             { cat: "PROGRAMMING RUN", cmd: "bash filename.sh", use: "Run a shell script" },
             { cat: "PROGRAMMING RUN", cmd: "node filename.js", use: "Run a JavaScript file" },
             { cat: "PROGRAMMING RUN", cmd: "php filename.php", use: "Run a PHP file" },
-            { cat: "PROGRAMMING RUN", cmd: "ruby filename.rb", use: "Run a Ruby script" },
-            { cat: "PROGRAMMING RUN", cmd: "go run filename.go", use: "Run a Go program" },
-            { cat: "PROGRAMMING RUN", cmd: "javac filename.java && java filename", use: "Compile and run Java" },
-            { cat: "PROGRAMMING RUN", cmd: "nano filename", use: "Open file editor" },
+            { cat: "PROGRAMMING RUN", cmd: "nano filename", use: "Open file editor to write/edit code" },
             { cat: "PROGRAMMING RUN", cmd: "chmod +x filename", use: "Give executable permission" },
 
             // GITHUB
@@ -193,13 +193,12 @@
             { cat: "GITHUB COMMANDS", cmd: "./tool.sh", use: "Start the tool" },
 
             // EXTRA UTILITIES
+            { cat: "USEFUL TOOLS", cmd: "pkg install htop", use: "Monitor system resources and processes" },
+            { cat: "USEFUL TOOLS", cmd: "pkg install ffmpeg", use: "Record, convert and stream audio/video" },
             { cat: "USEFUL TOOLS", cmd: "pkg install tar", use: "Archive files into tar format" },
             { cat: "USEFUL TOOLS", cmd: "pkg install rsync", use: "Fast file transfer tool" },
             { cat: "USEFUL TOOLS", cmd: "pkg install screen", use: "Terminal session manager" },
             { cat: "USEFUL TOOLS", cmd: "pkg install aria2", use: "Advanced download manager" },
-            { cat: "USEFUL TOOLS", cmd: "pkg install exa", use: "Modern replacement for ls" },
-            { cat: "USEFUL TOOLS", cmd: "pkg install bat", use: "Cat with syntax highlighting" },
-            { cat: "USEFUL TOOLS", cmd: "pkg install glow", use: "Markdown reader" },
 
             // ELITE HACKING & BRUTEFORCE
             { cat: "ELITE HACKING TOOLS", cmd: "pkg install metasploit -y", use: "Install Metasploit Framework" },
@@ -252,5 +251,5 @@
         }
     </script>
 </body>
-            </html>
+    </html>
     
