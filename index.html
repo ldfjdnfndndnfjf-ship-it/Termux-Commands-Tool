@@ -3,54 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TERMUX COMMAND TOOL BY | NAWAB ZADA HACKER</title>
+    <title>TERMUX Commands Tool By| NAWAB ZADA HACKER</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Courier+Prime&display=swap');
         
         body { background: #000; color: #0f0; font-family: 'Courier Prime', monospace; margin: 0; padding: 10px; }
         
-        /* LOCK SCREEN STYLE */
+        /* LOCK SCREEN */
         #lock-screen {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
-            background: rgba(0,0,0,0.95); z-index: 9999; 
+            background: rgba(0,0,0,0.98); z-index: 9999; 
             display: flex; flex-direction: column; justify-content: center; align-items: center;
             text-align: center; padding: 20px; box-sizing: border-box;
         }
-        .lock-box { border: 2px solid #0f0; padding: 30px; border-radius: 15px; box-shadow: 0 0 30px #0f0; background: #050505; }
+        .lock-box { border: 2px solid #0f0; padding: 30px; border-radius: 15px; box-shadow: 0 0 30px #0f0; background: #050505; max-width: 400px; }
         .unlock-btn { 
             background: #0f0; color: #000; padding: 15px 30px; border: none; 
             border-radius: 50px; font-family: 'Orbitron'; font-weight: bold; 
             cursor: pointer; text-decoration: none; display: inline-block; margin-top: 20px;
             transition: 0.3s;
         }
-        .unlock-btn:hover { box-shadow: 0 0 20px #0f0; transform: scale(1.05); }
 
         .container { max-width: 950px; margin: auto; background: #050505; border: 1px solid #0f0; border-radius: 15px; padding: 20px; box-shadow: 0 0 40px rgba(0, 255, 0, 0.15); }
         
-        /* BANNER STYLE */
+        /* BANNER */
         .banner { background: #0f0; color: #000; padding: 25px; border-radius: 10px; margin-bottom: 10px; text-align: center; border: 2px solid #fff; }
         .banner h1 { font-family: 'Orbitron', sans-serif; margin: 0; font-size: 2.2rem; letter-spacing: 5px; }
         .banner p { margin: 5px 0 0; font-weight: bold; letter-spacing: 2px; font-size: 0.9rem; }
         
         .creator-tag { text-align: center; color: #fff; font-family: 'Orbitron'; font-size: 0.8rem; margin-bottom: 25px; letter-spacing: 1px; }
 
-        /* DEFINITION AREA */
         .intro-box { background: #080808; border: 1px solid #222; padding: 20px; border-radius: 10px; margin-bottom: 30px; line-height: 1.6; border-left: 5px solid #0f0; }
         .intro-box h3 { color: #0f0; margin-top: 0; font-family: 'Orbitron'; font-size: 1rem; }
-        .intro-box p { color: #ccc; font-size: 0.9rem; margin-bottom: 15px; }
 
         .search-box { width: 100%; background: #111; border: 1px solid #0f0; color: #0f0; padding: 15px; border-radius: 8px; margin-bottom: 20px; outline: none; font-family: 'Courier Prime'; font-size: 1rem; border-left: 5px solid #0f0; box-sizing: border-box; }
         
-        .category-title { color: #000; background: #0f0; display: block; padding: 10px 15px; font-weight: bold; margin-top: 40px; border-radius: 5px; font-size: 1rem; font-family: 'Orbitron'; text-align: left; box-shadow: 0 0 10px rgba(0,255,0,0.2); }
+        .category-title { color: #000; background: #0f0; display: block; padding: 10px 15px; font-weight: bold; margin-top: 40px; border-radius: 5px; font-size: 1rem; font-family: 'Orbitron'; text-align: left; }
 
-        /* COMMAND TABLE BOXES */
         .command-row { display: grid; grid-template-columns: 1fr 1.2fr; gap: 10px; margin: 10px 0; }
-        .box-cmd { background: #0a0a0a; border: 1px solid #0f0; padding: 15px; border-radius: 5px; color: #fff; font-weight: bold; position: relative; display: flex; align-items: center; word-break: break-all; }
+        .box-cmd { background: #0a0a0a; border: 1px solid #0f0; padding: 15px; border-radius: 5px; color: #fff; font-weight: bold; position: relative; display: flex; align-items: center; word-break: break-all; font-size: 0.9rem; }
         .box-use { background: #080808; border: 1px solid #222; padding: 15px; border-radius: 5px; color: #888; font-size: 0.85rem; display: flex; align-items: center; }
         
         .box-cmd::before { content: "$ "; color: #0f0; }
         .copy-btn { position: absolute; right: 5px; top: 5px; font-size: 0.6rem; color: #0f0; border: 1px solid #0f0; padding: 2px 5px; cursor: pointer; border-radius: 3px; font-family: 'Orbitron'; }
-        .copy-btn:hover { background: #0f0; color: #000; }
 
         .footer-tag { margin-top: 50px; text-align: center; padding: 20px; border-top: 1px solid #222; color: #008800; font-family: 'Orbitron'; font-size: 0.8rem; letter-spacing: 2px; }
 
@@ -64,15 +59,15 @@
     <div id="lock-screen">
         <div class="lock-box">
             <h2 style="color: #0f0; font-family: 'Orbitron';">TOOL LOCKED 🔒</h2>
-            <p style="color: #fff;">Click the button join my WhatsApp Channel to unlock this elite tool!</p>
-            <a href="https://whatsapp.com/channel/0029VbB47ttDDmFNztpnZf2m" target="_blank" class="unlock-btn" onclick="unlockTool()">UNLOCK TOOL NOW 🦅</a>
+            <p style="color: #fff;">Click the button to unlock this Tool!</p>
+            <a href="https://whatsapp.com/channel/0029VbB47ttDDmFNztpnZf2m" target="_blank" class="unlock-btn" onclick="unlockTool()">JOIN & UNLOCK 🦅</a>
         </div>
     </div>
 
     <div class="container" id="main-content" style="display:none;">
         <div class="banner">
             <h1>TERMUX COMMANDS</h1>
-            <p>ELITE HACKING & SYSTEM DATABASE</p>
+            <p>Only For Education Perpose</p>
         </div>
         
         <div class="creator-tag">
@@ -81,16 +76,16 @@
 
         <div class="intro-box">
             <h3>What is Termux?</h3>
-            <p><strong>English:</strong> Termux is a powerful terminal emulator and Linux environment for Android that works directly without rooting your device. It allows you to run advanced hacking tools, programming scripts, and server-side applications right from your pocket. For a developer or an ethical hacker, it's like carrying a mini-computer everywhere.</p>
-            <p><strong>Urdu:</strong> Termux aik aisi powerful application hai jo aapke mobile ko aik mukammal Linux system mein badal deti hai, aur iske liye mobile root hona bhi zaroori nahi. Iske zariye aap advanced hacking tools, programming languages aur server management apne mobile se hi kar sakte hain. Agar aap hacking ya coding seekhna chahte hain, to Termux aapka pehla aur sab se mazboot hathyar hai.</p>
+            <p><strong>English:</strong> Termux is a powerful terminal emulator and Linux environment for Android that works directly without rooting your device. It allows you to run advanced hacking tools, programming scripts, and server-side applications right from your pocket.</p>
+            <p><strong>Urdu:</strong> Termux aik aisi powerful application hai jo aapke mobile ko aik mukammal Linux system mein badal deti hai. Iske zariye aap advanced hacking tools aur programming languages apne mobile se hi chala sakte hain bina root ke.</p>
         </div>
 
-        <input type="text" id="searchInput" class="search-box" placeholder="Search commands (e.g. storage, python, git)..." onkeyup="filterCommands()">
+        <input type="text" id="searchInput" class="search-box" placeholder="Search commands..." onkeyup="filterCommands()">
 
         <div id="commandList"></div>
 
         <div class="footer-tag">
-            © 2026 No Copy | POWERED BY NAWAB ZADA HACKER🙌🦅 
+            © 2026 | POWERED BY NAWAB ZADA HACKER🙌🦅 
         </div>
     </div>
 
@@ -99,39 +94,126 @@
             setTimeout(() => {
                 document.getElementById('lock-screen').style.display = 'none';
                 document.getElementById('main-content').style.display = 'block';
-            }, 2000);
+                loadCommands();
+            }, 1500);
         }
 
         const commands = [
             // BASIC COMMANDS
-            { cat: "TERMUX BASIC COMMANDS", cmd: "pwd", use: "Show your current working directory/folder." },
-            { cat: "TERMUX BASIC COMMANDS", cmd: "ls", use: "List all files and folders in current directory." },
-            { cat: "TERMUX BASIC COMMANDS", cmd: "cd [name]", use: "Change directory to enter a specific folder." },
-            { cat: "TERMUX BASIC COMMANDS", cmd: "cd ..", use: "Go back to the previous folder." },
-            { cat: "TERMUX BASIC COMMANDS", cmd: "clear", use: "Clean the terminal screen." },
-            { cat: "TERMUX BASIC COMMANDS", cmd: "mkdir [name]", use: "Create a new folder." },
-            { cat: "TERMUX BASIC COMMANDS", cmd: "rm -rf [name]", use: "Force delete a folder and all its data." },
-            
-            // ELITE HACKING TOOLS (NEWLY ADDED)
-            { cat: "ELITE HACKING FRAMEWORKS", cmd: "pkg install metasploit -y", use: "Install Metasploit - The world's most used penetration testing framework." },
-            { cat: "ELITE HACKING FRAMEWORKS", cmd: "msfconsole", use: "Launch the Metasploit console." },
-            { cat: "ELITE HACKING FRAMEWORKS", cmd: "pkg install sqlmap -y", use: "Automatic SQL injection and database takeover tool." },
-            { cat: "ELITE HACKING FRAMEWORKS", cmd: "pkg install nmap -y", use: "Network mapper for port scanning and security auditing." },
-            { cat: "ELITE HACKING FRAMEWORKS", cmd: "pkg install hydra -y", use: "Fast network login cracker (Bruteforce tool)." },
+            { cat: "TERMUX BASIC COMMANDS", cmd: "pwd", use: "Show your current folder" },
+            { cat: "TERMUX BASIC COMMANDS", cmd: "ls", use: "List files and folders" },
+            { cat: "TERMUX BASIC COMMANDS", cmd: "cd [folder]", use: "Go into a folder" },
+            { cat: "TERMUX BASIC COMMANDS", cmd: "cd ..", use: "Go back one folder" },
+            { cat: "TERMUX BASIC COMMANDS", cmd: "clear", use: "Clean the screen" },
+            { cat: "TERMUX BASIC COMMANDS", cmd: "exit", use: "Close Termux" },
+            { cat: "TERMUX BASIC COMMANDS", cmd: "mkdir foldername", use: "Make a new folder" },
+            { cat: "TERMUX BASIC COMMANDS", cmd: "touch filename", use: "Make a new file" },
+            { cat: "TERMUX BASIC COMMANDS", cmd: "cat filename", use: "Show file content" },
+            { cat: "TERMUX BASIC COMMANDS", cmd: "rm filename", use: "Delete a file" },
+            { cat: "TERMUX BASIC COMMANDS", cmd: "rm -rf foldername", use: "Delete a folder and its data" },
+            { cat: "TERMUX BASIC COMMANDS", cmd: "echo Hello", use: "Show message on screen" },
+            { cat: "TERMUX BASIC COMMANDS", cmd: "whoami", use: "Show your username" },
+            { cat: "TERMUX BASIC COMMANDS", cmd: "date", use: "Show current date and time" },
 
             // PACKAGE MANAGEMENT
-            { cat: "PACKAGE MANAGEMENT", cmd: "pkg update && pkg upgrade", use: "Refresh and update all system packages." },
-            { cat: "PACKAGE MANAGEMENT", cmd: "pkg install [tool]", use: "Install a new package or tool." },
+            { cat: "PACKAGE MANAGEMENT", cmd: "pkg update", use: "Refresh the list of tools" },
+            { cat: "PACKAGE MANAGEMENT", cmd: "pkg upgrade", use: "Upgrade installed tools" },
+            { cat: "PACKAGE MANAGEMENT", cmd: "pkg install [tool]", use: "Install a new tool" },
+            { cat: "PACKAGE MANAGEMENT", cmd: "pkg uninstall [tool]", use: "Remove a tool" },
+            { cat: "PACKAGE MANAGEMENT", cmd: "pkg list-all", use: "See all available tools" },
+            { cat: "PACKAGE MANAGEMENT", cmd: "apt update", use: "Same as pkg update" },
+            { cat: "PACKAGE MANAGEMENT", cmd: "apt upgrade", use: "Same as pkg upgrade" },
+            { cat: "PACKAGE MANAGEMENT", cmd: "apt install [tool]", use: "Same as pkg install" },
+
+            // FILE MANAGEMENT
+            { cat: "FILE MANAGEMENT", cmd: "mv file1 file2", use: "Rename or move a file" },
+            { cat: "FILE MANAGEMENT", cmd: "cp file1 file2", use: "Copy a file" },
+            { cat: "FILE MANAGEMENT", cmd: "ls -a", use: "Show hidden files too" },
+            { cat: "FILE MANAGEMENT", cmd: "ls -l", use: "Show file details" },
+            { cat: "FILE MANAGEMENT", cmd: "stat filename", use: "Show file info" },
 
             // STORAGE
-            { cat: "STORAGE ACCESS", cmd: "termux-setup-storage", use: "Give permission to access phone internal storage." },
+            { cat: "STORAGE ACCESS", cmd: "termux-setup-storage", use: "Give storage permission" },
+            { cat: "STORAGE ACCESS", cmd: "cd /sdcard", use: "Go to phone storage" },
+            { cat: "STORAGE ACCESS", cmd: "ls /sdcard", use: "See files in phone storage" },
+            { cat: "STORAGE ACCESS", cmd: "cp filename /sdcard/", use: "Copy file to phone memory" },
 
             // COOL COMMANDS
-            { cat: "TERMUX COOL COMMANDS", cmd: "cmatrix", use: "Hacker-style green falling code effect." },
-            { cat: "TERMUX COOL COMMANDS", cmd: "neofetch", use: "Display stylish system information." },
+            { cat: "TERMUX COOL COMMANDS", cmd: "cmatrix", use: "Hacker-style green falling code" },
+            { cat: "TERMUX COOL COMMANDS", cmd: "figlet", use: "Makes big text banners" },
+            { cat: "TERMUX COOL COMMANDS", cmd: "toilet", use: "Makes colorful and fancy text banners" },
+            { cat: "TERMUX COOL COMMANDS", cmd: "neofetch", use: "Displays system info stylishly" },
+            { cat: "TERMUX COOL COMMANDS", cmd: "sl", use: "Shows a train moving on terminal" },
+            { cat: "TERMUX COOL COMMANDS", cmd: "lolcat", use: "Adds rainbow colors to text" },
+            { cat: "TERMUX COOL COMMANDS", cmd: "fortune", use: "Gives random funny or wise quotes" },
+            { cat: "TERMUX COOL COMMANDS", cmd: "yes", use: "Repeats a word again and again forever" },
+            { cat: "TERMUX COOL COMMANDS", cmd: "cal", use: "Displays current month calculator" },
+            { cat: "TERMUX COOL COMMANDS", cmd: "w3m", use: "Browse websites in terminal" },
+            { cat: "TERMUX COOL COMMANDS", cmd: "termux-open-url", use: "Opens websites in phone browser" },
+            { cat: "TERMUX COOL COMMANDS", cmd: "banner", use: "Makes welcome banner in Termux" },
+            { cat: "TERMUX COOL COMMANDS", cmd: "chat", use: "Chat with another Termux user" },
+            { cat: "TERMUX COOL COMMANDS", cmd: "cowsay", use: "Cow says your message" },
+            { cat: "TERMUX COOL COMMANDS", cmd: "asciiquarium", use: "Aquarium with moving fishes" },
+
+            // NETWORKING
+            { cat: "NETWORKING COMMANDS", cmd: "ping website.com", use: "Check if website is working" },
+            { cat: "NETWORKING COMMANDS", cmd: "wget url", use: "Download from internet" },
+            { cat: "NETWORKING COMMANDS", cmd: "curl url", use: "Download content via terminal" },
+            { cat: "NETWORKING COMMANDS", cmd: "ip a", use: "Show your IP info" },
+            { cat: "NETWORKING COMMANDS", cmd: "ifconfig", use: "Another IP command" },
+            { cat: "NETWORKING COMMANDS", cmd: "nmap ip/website", use: "Scan network ports" },
+
+            // PROGRAMMING INSTALL
+            { cat: "PROGRAMMING INSTALLATION", cmd: "pkg install python", use: "To install Python" },
+            { cat: "PROGRAMMING INSTALLATION", cmd: "pkg install nodejs", use: "To install Node.js" },
+            { cat: "PROGRAMMING INSTALLATION", cmd: "pkg install php", use: "To install PHP" },
+            { cat: "PROGRAMMING INSTALLATION", cmd: "pkg install ruby", use: "To install Ruby" },
+            { cat: "PROGRAMMING INSTALLATION", cmd: "pkg install perl", use: "To install Perl" },
+            { cat: "PROGRAMMING INSTALLATION", cmd: "pkg install golang", use: "To install Go" },
+            { cat: "PROGRAMMING INSTALLATION", cmd: "pkg install clang", use: "To install C/C++" },
+            { cat: "PROGRAMMING INSTALLATION", cmd: "pkg install openjdk", use: "To install Java" },
+            { cat: "PROGRAMMING INSTALLATION", cmd: "pkg install lua", use: "To install Lua" },
+            { cat: "PROGRAMMING INSTALLATION", cmd: "pkg install rust", use: "To install Rust" },
+
+            // PROGRAMMING RUN
+            { cat: "PROGRAMMING RUN", cmd: "python filename.py", use: "Run a Python file" },
+            { cat: "PROGRAMMING RUN", cmd: "bash filename.sh", use: "Run a shell script" },
+            { cat: "PROGRAMMING RUN", cmd: "node filename.js", use: "Run a JavaScript file" },
+            { cat: "PROGRAMMING RUN", cmd: "php filename.php", use: "Run a PHP file" },
+            { cat: "PROGRAMMING RUN", cmd: "ruby filename.rb", use: "Run a Ruby script" },
+            { cat: "PROGRAMMING RUN", cmd: "go run filename.go", use: "Run a Go program" },
+            { cat: "PROGRAMMING RUN", cmd: "javac filename.java && java filename", use: "Compile and run Java" },
+            { cat: "PROGRAMMING RUN", cmd: "nano filename", use: "Open file editor" },
+            { cat: "PROGRAMMING RUN", cmd: "chmod +x filename", use: "Give executable permission" },
 
             // GITHUB
-            { cat: "GITHUB COMMANDS", cmd: "git clone [url]", use: "Download any tool directly from GitHub." }
+            { cat: "GITHUB COMMANDS", cmd: "git clone url", use: "Download from GitHub" },
+            { cat: "GITHUB COMMANDS", cmd: "cd folder", use: "Go into tool folder" },
+            { cat: "GITHUB COMMANDS", cmd: "bash install.sh", use: "Run install file" },
+            { cat: "GITHUB COMMANDS", cmd: "./tool.sh", use: "Start the tool" },
+
+            // EXTRA UTILITIES
+            { cat: "USEFUL TOOLS", cmd: "pkg install tar", use: "Archive files into tar format" },
+            { cat: "USEFUL TOOLS", cmd: "pkg install rsync", use: "Fast file transfer tool" },
+            { cat: "USEFUL TOOLS", cmd: "pkg install screen", use: "Terminal session manager" },
+            { cat: "USEFUL TOOLS", cmd: "pkg install aria2", use: "Advanced download manager" },
+            { cat: "USEFUL TOOLS", cmd: "pkg install exa", use: "Modern replacement for ls" },
+            { cat: "USEFUL TOOLS", cmd: "pkg install bat", use: "Cat with syntax highlighting" },
+            { cat: "USEFUL TOOLS", cmd: "pkg install glow", use: "Markdown reader" },
+
+            // ELITE HACKING & BRUTEFORCE
+            { cat: "ELITE HACKING TOOLS", cmd: "pkg install metasploit -y", use: "Install Metasploit Framework" },
+            { cat: "ELITE HACKING TOOLS", cmd: "pkg install sqlmap -y", use: "SQL Injection database tool" },
+            { cat: "ELITE HACKING TOOLS", cmd: "pkg install hydra -y", use: "Fastest password cracker" },
+            { cat: "ELITE HACKING TOOLS", cmd: "msfconsole", use: "Start Metasploit Framework" },
+            { cat: "ELITE HACKING TOOLS", cmd: "pkg install cupp", use: "Create custom wordlist for attacks" },
+
+            // SHORTCUTS
+            { cat: "USEFUL SHORTCUTS", cmd: "CTRL + C", use: "Stop running command" },
+            { cat: "USEFUL SHORTCUTS", cmd: "CTRL + D", use: "Logout or exit" },
+            { cat: "USEFUL SHORTCUTS", cmd: "CTRL + L", use: "Clear screen" },
+            { cat: "USEFUL SHORTCUTS", cmd: "TAB", use: "Auto-complete" },
+            { cat: "USEFUL SHORTCUTS", cmd: "&&", use: "Run multiple commands" }
         ];
 
         function loadCommands() {
@@ -144,7 +226,6 @@
                     currentCat = c.cat;
                     list.innerHTML += `<div class="category-title">${currentCat}</div>`;
                 }
-
                 list.innerHTML += `
                     <div class="command-row">
                         <div class="box-cmd">
@@ -160,36 +241,16 @@
         function filterCommands() {
             let input = document.getElementById('searchInput').value.toLowerCase();
             let rows = document.getElementsByClassName('command-row');
-            let titles = document.getElementsByClassName('category-title');
-
             for (let row of rows) {
-                let text = row.innerText.toLowerCase();
-                row.style.display = text.includes(input) ? "grid" : "none";
-            }
-            
-            for (let title of titles) {
-                let next = title.nextElementSibling;
-                let hasVisible = false;
-                while (next && !next.classList.contains('category-title')) {
-                    if (next.style.display !== 'none') { hasVisible = true; break; }
-                    next = next.nextElementSibling;
-                }
-                title.style.display = hasVisible ? "block" : "none";
+                row.style.display = row.innerText.toLowerCase().includes(input) ? "grid" : "none";
             }
         }
 
         function copyCmd(text) {
-            const temp = document.createElement('textarea');
-            temp.value = text;
-            document.body.appendChild(temp);
-            temp.select();
-            document.execCommand('copy');
-            document.body.removeChild(temp);
+            navigator.clipboard.writeText(text);
             alert("Command Copied.");
         }
-
-        loadCommands();
     </script>
 </body>
-  </html>
-      
+            </html>
+    
