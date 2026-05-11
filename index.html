@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TERMUX COMMAND TOOL BY | NAWAB ZADA HACKER</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Courier+Prime&display=swap');
+        
+        body { background: #000; color: #0f0; font-family: 'Courier Prime', monospace; margin: 0; padding: 10px; }
+        
+        /* LOCK SCREEN STYLE */
+        #lock-screen {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+            background: rgba(0,0,0,0.95); z-index: 9999; 
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; padding: 20px; box-sizing: border-box;
+        }
+        .lock-box { border: 2px solid #0f0; padding: 30px; border-radius: 15px; box-shadow: 0 0 30px #0f0; background: #050505; }
+        .unlock-btn { 
+            background: #0f0; color: #000; padding: 15px 30px; border: none; 
+            border-radius: 50px; font-family: 'Orbitron'; font-weight: bold; 
+            cursor: pointer; text-decoration: none; display: inline-block; margin-top: 20px;
+            transition: 0.3s;
+        }
+        .unlock-btn:hover { box-shadow: 0 0 20px #0f0; transform: scale(1.05); }
+
+        .container { max-width: 950px; margin: auto; background: #050505; border: 1px solid #0f0; border-radius: 15px; padding: 20px; box-shadow: 0 0 40px rgba(0, 255, 0, 0.15); }
+        
+        /* BANNER STYLE */
+        .banner { background: #0f0; color: #000; padding: 25px; border-radius: 10px; margin-bottom: 10px; text-align: center; border: 2px solid #fff; }
+        .banner h1 { font-family: 'Orbitron', sans-serif; margin: 0; font-size: 2.2rem; letter-spacing: 5px; }
+        .banner p { margin: 5px 0 0; font-weight: bold; letter-spacing: 2px; font-size: 0.9rem; }
+        
+        .creator-tag { text-align: center; color: #fff; font-family: 'Orbitron'; font-size: 0.8rem; margin-bottom: 25px; letter-spacing: 1px; }
+
+        /* DEFINITION AREA */
+        .intro-box { background: #080808; border: 1px solid #222; padding: 20px; border-radius: 10px; margin-bottom: 30px; line-height: 1.6; border-left: 5px solid #0f0; }
+        .intro-box h3 { color: #0f0; margin-top: 0; font-family: 'Orbitron'; font-size: 1rem; }
+        .intro-box p { color: #ccc; font-size: 0.9rem; margin-bottom: 15px; }
+
+        .search-box { width: 100%; background: #111; border: 1px solid #0f0; color: #0f0; padding: 15px; border-radius: 8px; margin-bottom: 20px; outline: none; font-family: 'Courier Prime'; font-size: 1rem; border-left: 5px solid #0f0; box-sizing: border-box; }
+        
+        .category-title { color: #000; background: #0f0; display: block; padding: 10px 15px; font-weight: bold; margin-top: 40px; border-radius: 5px; font-size: 1rem; font-family: 'Orbitron'; text-align: left; box-shadow: 0 0 10px rgba(0,255,0,0.2); }
+
+        /* COMMAND TABLE BOXES */
+        .command-row { display: grid; grid-template-columns: 1fr 1.2fr; gap: 10px; margin: 10px 0; }
+        .box-cmd { background: #0a0a0a; border: 1px solid #0f0; padding: 15px; border-radius: 5px; color: #fff; font-weight: bold; position: relative; display: flex; align-items: center; word-break: break-all; }
+        .box-use { background: #080808; border: 1px solid #222; padding: 15px; border-radius: 5px; color: #888; font-size: 0.85rem; display: flex; align-items: center; }
+        
+        .box-cmd::before { content: "$ "; color: #0f0; }
+        .copy-btn { position: absolute; right: 5px; top: 5px; font-size: 0.6rem; color: #0f0; border: 1px solid #0f0; padding: 2px 5px; cursor: pointer; border-radius: 3px; font-family: 'Orbitron'; }
+        .copy-btn:hover { background: #0f0; color: #000; }
+
+        .footer-tag { margin-top: 50px; text-align: center; padding: 20px; border-top: 1px solid #222; color: #008800; font-family: 'Orbitron'; font-size: 0.8rem; letter-spacing: 2px; }
+
+        @media (max-width: 600px) { .command-row { grid-template-columns: 1fr; } }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-thumb { background: #0f0; border-radius: 10px; }
+    </style>
+</head>
+<body>
+
+    <div id="lock-screen">
+        <div class="lock-box">
+            <h2 style="color: #0f0; font-family: 'Orbitron';">TOOL LOCKED 🔒</h2>
+            <p style="color: #fff;">Jani, please join my WhatsApp Channel to unlock this elite tool!</p>
+            <a href="https://whatsapp.com/channel/0029VbB47ttDDmFNztpnZf2m" target="_blank" class="unlock-btn" onclick="unlockTool()">UNLOCK TOOL NOW 🦅</a>
+        </div>
+    </div>
+
+    <div class="container" id="main-content" style="display:none;">
+        <div class="banner">
+            <h1>TERMUX COMMANDS</h1>
+            <p>ELITE HACKING & SYSTEM DATABASE</p>
+        </div>
+        
+        <div class="creator-tag">
+            Create By <span style="color: #0f0; text-shadow: 0 0 10px #0f0;">Nawab ZADA HACKER 🦅🙌</span>
+        </div>
+
+        <div class="intro-box">
+            <h3>What is Termux?</h3>
+            <p><strong>English:</strong> Termux is a powerful terminal emulator and Linux environment for Android that works directly without rooting your device. It allows you to run advanced hacking tools, programming scripts, and server-side applications right from your pocket. For a developer or an ethical hacker, it's like carrying a mini-computer everywhere.</p>
+            <p><strong>Urdu:</strong> Termux aik aisi powerful application hai jo aapke mobile ko aik mukammal Linux system mein badal deti hai, aur iske liye mobile root hona bhi zaroori nahi. Iske zariye aap advanced hacking tools, programming languages aur server management apne mobile se hi kar sakte hain. Agar aap hacking ya coding seekhna chahte hain, to Termux aapka pehla aur sab se mazboot hathyar hai.</p>
+        </div>
+
+        <input type="text" id="searchInput" class="search-box" placeholder="Search commands (e.g. storage, python, git)..." onkeyup="filterCommands()">
+
+        <div id="commandList"></div>
+
+        <div class="footer-tag">
+            © 2026 No Copy | POWERED BY NAWAB ZADA HACKER🙌🦅 
+        </div>
+    </div>
+
+    <script>
+        function unlockTool() {
+            setTimeout(() => {
+                document.getElementById('lock-screen').style.display = 'none';
+                document.getElementById('main-content').style.display = 'block';
+            }, 2000);
+        }
+
+        const commands = [
+            // BASIC COMMANDS
+            { cat: "TERMUX BASIC COMMANDS", cmd: "pwd", use: "Show your current working directory/folder." },
+            { cat: "TERMUX BASIC COMMANDS", cmd: "ls", use: "List all files and folders in current directory." },
+            { cat: "TERMUX BASIC COMMANDS", cmd: "cd [name]", use: "Change directory to enter a specific folder." },
+            { cat: "TERMUX BASIC COMMANDS", cmd: "cd ..", use: "Go back to the previous folder." },
+            { cat: "TERMUX BASIC COMMANDS", cmd: "clear", use: "Clean the terminal screen." },
+            { cat: "TERMUX BASIC COMMANDS", cmd: "mkdir [name]", use: "Create a new folder." },
+            { cat: "TERMUX BASIC COMMANDS", cmd: "rm -rf [name]", use: "Force delete a folder and all its data." },
+            
+            // ELITE HACKING TOOLS (NEWLY ADDED)
+            { cat: "ELITE HACKING FRAMEWORKS", cmd: "pkg install metasploit -y", use: "Install Metasploit - The world's most used penetration testing framework." },
+            { cat: "ELITE HACKING FRAMEWORKS", cmd: "msfconsole", use: "Launch the Metasploit console." },
+            { cat: "ELITE HACKING FRAMEWORKS", cmd: "pkg install sqlmap -y", use: "Automatic SQL injection and database takeover tool." },
+            { cat: "ELITE HACKING FRAMEWORKS", cmd: "pkg install nmap -y", use: "Network mapper for port scanning and security auditing." },
+            { cat: "ELITE HACKING FRAMEWORKS", cmd: "pkg install hydra -y", use: "Fast network login cracker (Bruteforce tool)." },
+
+            // PACKAGE MANAGEMENT
+            { cat: "PACKAGE MANAGEMENT", cmd: "pkg update && pkg upgrade", use: "Refresh and update all system packages." },
+            { cat: "PACKAGE MANAGEMENT", cmd: "pkg install [tool]", use: "Install a new package or tool." },
+
+            // STORAGE
+            { cat: "STORAGE ACCESS", cmd: "termux-setup-storage", use: "Give permission to access phone internal storage." },
+
+            // COOL COMMANDS
+            { cat: "TERMUX COOL COMMANDS", cmd: "cmatrix", use: "Hacker-style green falling code effect." },
+            { cat: "TERMUX COOL COMMANDS", cmd: "neofetch", use: "Display stylish system information." },
+
+            // GITHUB
+            { cat: "GITHUB COMMANDS", cmd: "git clone [url]", use: "Download any tool directly from GitHub." }
+        ];
+
+        function loadCommands() {
+            const list = document.getElementById('commandList');
+            list.innerHTML = "";
+            let currentCat = "";
+
+            commands.forEach(c => {
+                if(c.cat !== currentCat) {
+                    currentCat = c.cat;
+                    list.innerHTML += `<div class="category-title">${currentCat}</div>`;
+                }
+
+                list.innerHTML += `
+                    <div class="command-row">
+                        <div class="box-cmd">
+                            <span class="copy-btn" onclick="copyCmd('${c.cmd}')">COPY</span>
+                            ${c.cmd}
+                        </div>
+                        <div class="box-use">${c.use}</div>
+                    </div>
+                `;
+            });
+        }
+
+        function filterCommands() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let rows = document.getElementsByClassName('command-row');
+            let titles = document.getElementsByClassName('category-title');
+
+            for (let row of rows) {
+                let text = row.innerText.toLowerCase();
+                row.style.display = text.includes(input) ? "grid" : "none";
+            }
+            
+            for (let title of titles) {
+                let next = title.nextElementSibling;
+                let hasVisible = false;
+                while (next && !next.classList.contains('category-title')) {
+                    if (next.style.display !== 'none') { hasVisible = true; break; }
+                    next = next.nextElementSibling;
+                }
+                title.style.display = hasVisible ? "block" : "none";
+            }
+        }
+
+        function copyCmd(text) {
+            const temp = document.createElement('textarea');
+            temp.value = text;
+            document.body.appendChild(temp);
+            temp.select();
+            document.execCommand('copy');
+            document.body.removeChild(temp);
+            alert("Command Copied.");
+        }
+
+        loadCommands();
+    </script>
+</body>
+  </html>
+      
